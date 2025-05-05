@@ -22,9 +22,11 @@
   /* === Font size === */
   --font-size-xs: clamp(0.5rem, 2vw + 0.5rem, 1rem);
   --font-size-s: clamp(1rem, 2vw + 0.5rem, 2rem);
-  --font-size-m: clamp(2rem, 2vw + 1rem, 3rem);
+  --font-size-ms: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+  --font-size-m: clamp(2rem, 2vw + 1.5rem, 3rem);
   --font-size-l: clamp(3rem, 2vw + 2.5rem, 4rem);
   --font-size-xl: clamp(4rem, 2vw + 3rem, 5rem);
+  --font-size-xxl: clamp(5rem, 2vw + 4rem, 6rem);
 
   /* === Font Weight === */
   --font-weight-light: 300;
@@ -41,12 +43,14 @@
   --space-l: 0.2em;
 
   /*=== Margin y Padding ===*/
-  --margin-s: clamp(0.2rem, 2vw + 0.5rem, 0.5rem);
-  --margin-m: clamp(0.6rem, 2vw + 0.8rem, 1rem);
+  --margin-xs: clamp(0.2rem, 2vw + 0.5rem, 0.5rem);
+  --margin-s: clamp(0.6rem, 2vw + 0.8rem, 1rem);
+  --margin-m: clamp(1rem, 2vw + 1rem, 2rem);
   --margin-l: clamp(2rem, 2vw + 1.5rem, 3rem);
   --margin-xl: clamp(3rem, 2vw + 2rem, 4rem);
 
-  --padding-s: clamp(0.5rem, 2vw + 0.5rem, 1rem);
+  --padding-xs: clamp(0.2rem, 2vw + 0.5rem, 0.5rem);
+  --padding-s: clamp(0.5rem, 2vw + 0.8rem, 1rem);
   --padding-m: clamp(1rem, 2vw + 1rem, 2rem);
   --padding-l: clamp(2rem, 2vw + 1.5rem, 3rem);
   --padding-xl: clamp(3rem, 2vw + 2rem, 4rem);
@@ -66,11 +70,9 @@
   --height-xl: clamp(400px, 80vh, 800px);
 }
 
-
 body {
-  background-color: black;
+  background-color: white;
 }
-
 
 /* ========================= RESET CSS ========================= */
 
@@ -85,6 +87,7 @@ body {
 /* 2. Remove default margin */
 * {
   margin: 0;
+  padding: 0;
 }
 
 /* 3. Enable keyword animations */
@@ -99,6 +102,11 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* 6. Improve media defaults */
@@ -150,4 +158,3 @@ h6 {
 #__next {
   isolation: isolate;
 }
-
