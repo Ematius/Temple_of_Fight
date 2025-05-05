@@ -31,3 +31,13 @@ src/
 ## 🌐 Vista previa del proyecto(Vercel)
 
 [Temple of Fight](https://temple-of-fight.vercel.app/home)
+
+## 📸 Imágenes del proyecto
+
+### Home
+
+![Vista móvil de la página principal](assets/responsive/home-mobile.webp "Vista móvil de la página principal")
+
+![Vista tablet de la página principal](assets/responsive/home-tablet.webp "Vista tablet de la página principal")
+
+![Vista de escritorio de la página principal](assets/responsive/home-desktop.webp "Vista de escritorio de la página principal")
