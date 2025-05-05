@@ -36,8 +36,8 @@ src/
 
 ### Home
 
-![Vista móvil de la página principal](assets/responsive/home-mobile.webp "Vista móvil de la página principal")
+![Vista móvil de la página principal](.github/img/home-mobile.webp "Vista móvil de la página principal")
 
-![Vista tablet de la página principal](assets/responsive/home-tablet.webp "Vista tablet de la página principal")
+![Vista tablet de la página principal](.github/img/home-tablet.webp "Vista tablet de la página principal")
 
-![Vista de escritorio de la página principal](assets/responsive/home-desktop.webp "Vista de escritorio de la página principal")
+![Vista de escritorio de la página principal](.github/img/home-desktop.webp "Vista de escritorio de la página principal")
