@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Trainer } from '../../shared/models/trainer.model';
+import { Fighter } from '../../shared/models/fighter.model';
+import { DisciplineService } from '../../core/services/discipline.service';
+import { DisciplineComponent } from '../../shared/discipline/discipline.component';
+import { FightersComponent } from '../../shared/fighters/fighters.component';
+import { FightersService } from '../../core/services/fighters.service';
 
 @Component({
   selector: 'app-mma',
-  imports: [],
+  imports: [DisciplineComponent, FightersComponent],
   templateUrl: './mma.component.html',
-  styleUrl: './mma.component.scss'
+  styleUrl: './mma.component.scss',
 })
-export class MmaComponent {
+export class MmaComponent implements OnInit {
+  disciplineName: string = 'MMA';
+  trainers: Trainer[] = [];
+  fighters: Fighter[] = [];
 
+  constructor(
+    private disciplineService: DisciplineService,
+    private FightersService: FightersService
+  ) {}
+  
+  ngOnInit(): void {
+    this.trainers = this.disciplineService.getTrainers();
+    this.fighters = this.FightersService.getFighters();
+  }
 }

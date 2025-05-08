@@ -1,0 +1,15 @@
+<section aria-labelledby="entrenadores-title">
+  <h2>{{disciplineName}}</h2>
+ <article class="trainers">
+  <div class="trainers-list">
+    <h3>Entrenadores</h3>
+    <ul>
+      @for(trainer of trainers; track trainer.id){
+        <li>{{trainer.name}}
+        <img [src]="trainer.imageUrl" [alt]="trainer.name" class="trainer-image" />
+        </li>
+      }
+    </ul>
+  </div>
+ </article>
+</section>
