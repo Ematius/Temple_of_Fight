@@ -21,9 +21,9 @@ export class MmaComponent implements OnInit {
     private disciplineService: DisciplineService,
     private FightersService: FightersService
   ) {}
-  
+
   ngOnInit(): void {
-    this.trainers = this.disciplineService.getTrainers();
-    this.fighters = this.FightersService.getFighters();
+    this.trainers = this.disciplineService.getTrainersByDiscipline('mma');
+    this.fighters = this.FightersService.getFightersByDiscipline('mma');
   }
 }

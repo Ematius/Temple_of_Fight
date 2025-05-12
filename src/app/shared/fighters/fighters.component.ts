@@ -1,6 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Fighter } from '../models/fighter.model';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 @Component({
@@ -9,8 +13,10 @@ import { Fighter } from '../models/fighter.model';
   templateUrl: './fighters.component.html',
   styleUrl: './fighters.component.scss',
 })
+export class FightersComponent  implements AfterViewInit {
+  @Input() fighters: Fighter[] = [];
 
-export class FightersComponent {
-  @Input()  fighters: Fighter[] = []
-
+  ngAfterViewInit(): void {
+    
+  }
 }

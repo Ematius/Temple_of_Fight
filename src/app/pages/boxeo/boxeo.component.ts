@@ -23,7 +23,7 @@ export class BoxeoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.trainers = this.disciplineService.getTrainers();
-    this.fighters = this.FightersService.getFighters();
+    this.trainers = this.disciplineService.getTrainersByDiscipline('boxeo');
+    this.fighters = this.FightersService.getFightersByDiscipline('boxeo');
   }
 }

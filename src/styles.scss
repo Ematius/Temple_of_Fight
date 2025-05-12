@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+
 
 :root {
   /*====== Color palette ==========*/
@@ -8,7 +11,7 @@
   --color-quaternary: #baa780;
   --color-quinary: #aa9367;
   --color-sextary: #a28c61;
-  --color-white: white;
+  --color-white:#fff5eeed;
   --color-black: black;
 
   /* === Gradient colors === */
@@ -57,6 +60,7 @@
 
   /* === width and heights === */
 
+  --width-xxs: clamp(50px, 10vw, 100px);
   --width-xs: clamp(100px, 20vw, 200px);
   --width-s: clamp(150px, 40vw, 300px);
   --width-m: clamp(250px, 60vw, 500px);
@@ -70,8 +74,15 @@
   --height-xl: clamp(400px, 80vh, 800px);
 }
 
+
 body {
-  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  background-image: radial-gradient(
+    circle at center center,
+    var(--color-black) 90%,
+    var(--color-secondary) 100%,
+  );
+  background-size: cover;
 }
 
 /* ========================= RESET CSS ========================= */

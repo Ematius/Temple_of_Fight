@@ -1,15 +1,16 @@
 <section aria-labelledby="wrapper-fighters">
   <article class="fighters">
+    <h3>Peladores</h3>
     <div class="fighters-list">
-      <h3>Peladores</h3>
       <ul>
         @for(fighter of fighters; track fighter.id){
-        <li>{{fighter.name}}
+        <li>
+          <h4> {{fighter.name}} </h4>
           <img [src]="fighter.imageUrl" [alt]="fighter.name" class="fighter-image" />
-          <p class="ranking">{{fighter.ranking}}</p>
-          <p> Victorias:{{fighter.wins}}, de los cuales {{fighter.KOs}} KOs</p>
-          <p> Derrotas:{{fighter.loses}}</p>
-          <p> Empate:{{fighter.draw}}</p>
+          <p> Victorias: {{fighter.wins}}</p>
+          <p>KOs: {{fighter.KOs}} </p>
+          <p> Derrotas: {{fighter.loses}}</p>
+          <p> Empate: {{fighter.draw}}</p>
           <a [routerLink]="['/fighter', fighter.id]" class="btn-fighter" role="button">
             Ver recorrido de combates
           </a>
