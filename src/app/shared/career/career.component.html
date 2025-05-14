@@ -1,0 +1,51 @@
+<section>
+
+  <div class="fighters-list">
+    <ul>
+      <li>
+        <div class="container-img">
+          <img [src]="fighter?.imageUrl" [alt]="fighter?.name" class="fighter-image" />
+          <a [attr.href]="fighter?.tapology">Tapology</a>
+        </div>
+        <div class="container-info">
+        <h4> {{fighter?.name}} </h4>
+        <p>Ranking: {{fighter?.record}}</p>
+        <p> Victorias: {{fighter?.wins}}</p>
+        <p> KOs: {{fighter?.Tko}} </p>
+        <p> Sub: {{fighter?.sub}} </p>
+        <p> Derrotas: {{fighter?.loses}}</p>
+        <p> Empate: {{fighter?.draw}}</p>
+        <p> Peso: {{fighter?.weight}}</p>
+        <p> Altura: {{fighter?.height}}</p>
+       </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container-svg">
+    <svg [attr.height]="career.length * spacing + offset">
+      <line id="timeline" x1="30" y1="0" x2="30" [attr.y2]="career.length * spacing" />
+      @for (fight of career; track $index) {
+      <g class="container-group">
+        <circle [attr.cx]="30" [attr.cy]="$index * spacing + offset" r="6" class="circle"/>
+        <foreignObject [attr.x]="50" [attr.y]="$index * spacing + offset" class="container-career">
+          <div xmlns="http://www.w3.org/1999/xhtml" class="career-info">
+            <p>Fecha del evento: {{ fight.date }}</p>
+            <p>Oponente: {{ fight.opponent }}</p>
+            <p>Resultado: {{ fight.result }}</p>
+            <p>Evento:
+              @if(fight.logoEvent){
+              <img [src]=" fight.logoEvent" [alt]="fight.event + ' logo'">
+              } @else {
+                {{ fight.event }}
+              }
+            </p>
+          </div>
+        </foreignObject>
+      </g>
+      }
+    </svg>
+  </div>
+
+
+</section>

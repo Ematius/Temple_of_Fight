@@ -24,5 +24,12 @@ export const routes: Routes = [
         (c) => c.MuayThaiComponent
       ),
   },
+  {
+    path: 'career/:id',
+    loadComponent: () =>
+      import('./shared/career/career.component').then(
+        (c) => c.CareerComponent
+      ),
+  },
   { path: '**', redirectTo: 'home' },
 ];

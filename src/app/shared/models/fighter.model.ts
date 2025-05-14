@@ -1,10 +1,19 @@
+import { Fights } from './fights.model';
+
 export interface Fighter {
-  id: number;
+  id: string;
   name: string;
   imageUrl: string;
+  height: string;
+  weight: string;
+  record: string;
   wins: number;
-  KOs: number;
+  Tko: number;
+  sub: number;
   loses: number;
   draw: number;
   discipline: string;
+  tapology: string;
+  titles: string[];
+  career: Fights[];
 }

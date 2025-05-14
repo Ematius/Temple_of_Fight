@@ -1,0 +1,129 @@
+section {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: var(--space-s);
+
+  .fighters-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10rem;
+    ul {
+      li {
+        display: flex;
+        flex-direction: row;
+        gap:1.5rem;
+        list-style-type: none;
+        font-size: var(--font-size-xs);
+        width: 100%;
+        height: auto;
+        color: var(--color-white);
+        .container-img{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: var(--width-s);
+            height: auto;
+            object-fit: contain;
+            border-radius: 20px;
+          }
+          a{
+            text-decoration: none;
+            font-size: var(--font-size-ms);
+            font-family: var(--font-primary);
+            background: linear-gradient(
+              var(--color-quaternary),
+              var(--color-quinary),
+              var(--color-sextary)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.5rem;
+          }
+
+        }
+
+        .container-info{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: .5em;
+          h4 {
+            font-size: var(--font-size-ms);
+            text-align: center;
+            font-family: var(--font-primary);
+            background: linear-gradient(
+              var(--color-quaternary),
+              var(--color-quinary),
+              var(--color-sextary)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .container-svg {
+    background: var(--color-background);
+    display: flex;
+
+    svg {
+
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+      #timeline {
+        stroke: var(--color-primary);
+        stroke-width: 4px;
+      }
+
+      .container-group {
+        circle {
+          fill: var(--color-black);
+          stroke: var(--color-white);
+          stroke-width: 5px;
+          fill-opacity: 0;
+        }
+
+        .container-career {
+          width: var(--width-m);
+          height: var(--height-l);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          .career-info{
+            background: linear-gradient(
+              var(--color-primary),
+              var(--color-secondary)
+            );
+            border: 2px solid var(--color-white);
+            border-radius: 10px;
+            padding: 2rem;
+            color: var(--color-white);
+
+            font-size: var(--font-size-s);
+
+            p {
+              margin: 0.3rem 0;
+            }
+
+
+          }
+        }
+
+
+      }
+    }
+
+  }
+}
