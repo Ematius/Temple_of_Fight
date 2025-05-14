@@ -1,4 +1,4 @@
-# 🥊 Team of Fight – Ranking App (En proceso de construccion)
+# 🥊 Team of Fight – Dossier de competidores (En proceso de construccion)
 
 Proyecto en Angular 19 standalone que muestra rankings de luchadores por disciplina (MMA, Muay Thai y Boxeo), con animaciones usando GSAP y estilos en SCSS.
 
