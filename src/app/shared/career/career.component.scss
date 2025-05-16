@@ -2,35 +2,44 @@ section {
   display: flex;
   flex-direction: column;
   letter-spacing: var(--space-s);
+  margin-bottom: 10rem;
+  width: 100vw;
+
+
+
 
   .fighters-list {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 10rem;
+
     ul {
       li {
         display: flex;
         flex-direction: row;
-        gap:1.5rem;
+        gap: 1.5rem;
         list-style-type: none;
         font-size: var(--font-size-xs);
         width: 100%;
         height: auto;
         color: var(--color-white);
-        .container-img{
+
+        .container-img {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
 
-          img {
+          .fighter-image {
+            margin-top: 5rem;
             width: var(--width-s);
             height: auto;
             object-fit: contain;
             border-radius: 20px;
           }
-          a{
+
+          a {
             text-decoration: none;
             font-size: var(--font-size-ms);
             font-family: var(--font-primary);
@@ -44,15 +53,14 @@ section {
             -webkit-text-fill-color: transparent;
             padding: 0.5rem;
           }
-
         }
 
-        .container-info{
+        .container-info {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
-          gap: .5em;
+          gap: 0.5em;
           h4 {
             font-size: var(--font-size-ms);
             text-align: center;
@@ -67,8 +75,6 @@ section {
             -webkit-text-fill-color: transparent;
           }
         }
-
-
       }
     }
   }
@@ -78,7 +84,6 @@ section {
     display: flex;
 
     svg {
-
       border-radius: 10px;
       padding: 2rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -100,30 +105,65 @@ section {
           width: var(--width-m);
           height: var(--height-l);
           opacity: 0;
-          transition: opacity 0.5s ease;
-          .career-info{
+          transition: opacity 0.8s ease;
+          .career-info {
             background: linear-gradient(
               var(--color-primary),
               var(--color-secondary)
             );
             border: 2px solid var(--color-white);
             border-radius: 10px;
-            padding: 2rem;
+            margin: var(--margin-m);
+            padding: var(--padding-m);
             color: var(--color-white);
-
             font-size: var(--font-size-s);
 
             p {
               margin: 0.3rem 0;
             }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1200px) {
 
+    margin-bottom: 50rem;
+    .fighters-list {
+      ul {
+        li {
+          .container-img {
+            .fighter-image {
+              width: var(--width-m);
+            }
+          }
+          .container-info{
+            h4 {
+              font-size: var(--font-size-l);
+            }
+            p{
+              font-size: var(--font-size-s);
+            }
+          }
+        }
+      }
+    }
+    .container-svg {
+      svg {
+        .container-group {
+          circle {
+            width: var(--width-m);
+            height: var(--height-m);
+          }
+          .container-career {
+
+            width: var(--width-l);
+            height: var(--height-l);
 
           }
         }
-
-
       }
     }
-
   }
+
 }

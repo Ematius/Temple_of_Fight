@@ -9,37 +9,38 @@
         </div>
         <div class="container-info">
         <h4> {{fighter?.name}} </h4>
-        <p>Ranking: {{fighter?.record}}</p>
-        <p> Victorias: {{fighter?.wins}}</p>
-        <p> KOs: {{fighter?.Tko}} </p>
-        <p> Sub: {{fighter?.sub}} </p>
-        <p> Derrotas: {{fighter?.loses}}</p>
-        <p> Empate: {{fighter?.draw}}</p>
-        <p> Peso: {{fighter?.weight}}</p>
-        <p> Altura: {{fighter?.height}}</p>
+        <p> <b>Ranking:</b> {{fighter?.record}}</p>
+        <p> <b>Victorias:</b> {{fighter?.wins}}</p>
+        <p> <b>KOs:</b>  {{fighter?.Tko}} </p>
+        <p> <b>Sub:</b> {{fighter?.sub}} </p>
+        <p> <b>Derrotas:</b>  {{fighter?.loses}}</p>
+        <p> <b>Empate:</b>  {{fighter?.draw}}</p>
+        <p> <b>Peso:</b>  {{fighter?.weight}}</p>
+        <p> <b>Altura:</b>  {{fighter?.height}}</p>
        </div>
       </li>
     </ul>
   </div>
 
   <div class="container-svg">
-    <svg [attr.height]="career.length * spacing + offset">
-      <line id="timeline" x1="30" y1="0" x2="30" [attr.y2]="career.length * spacing" />
+    <svg width="1200" [attr.height]="career.length * spacing + offset">
+      <line id="timeline" x1="15" y1="0" x2="15" [attr.y2]="career.length * spacing" />
       @for (fight of career; track $index) {
       <g class="container-group">
-        <circle [attr.cx]="30" [attr.cy]="$index * spacing + offset" r="6" class="circle"/>
+        <circle [attr.cx]="15" [attr.cy]="$index * spacing + offset" r="6" />
         <foreignObject [attr.x]="50" [attr.y]="$index * spacing + offset" class="container-career">
           <div xmlns="http://www.w3.org/1999/xhtml" class="career-info">
-            <p>Fecha del evento: {{ fight.date }}</p>
-            <p>Oponente: {{ fight.opponent }}</p>
-            <p>Resultado: {{ fight.result }}</p>
-            <p>Evento:
+            <p> <b>Fecha del evento: </b> <br> <i>{{ fight.date }}</i> </p>
+            <p> <b> Oponente: </b> <br> <i>{{ fight.opponent }}</i> </p>
+            <p> <b>Resultado:</b>  <i> {{ fight.result }}</i> </p>
+            <p> <b> Evento</b>
               @if(fight.logoEvent){
-              <img [src]=" fight.logoEvent" [alt]="fight.event + ' logo'">
+              <img  [src]=" fight.logoEvent" [alt]="fight.event + ' logo'">
               } @else {
-                {{ fight.event }}
+                <i>: {{ fight.event }}</i>
               }
-            </p>
+
+               </p>
           </div>
         </foreignObject>
       </g>

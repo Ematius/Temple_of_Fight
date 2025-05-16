@@ -6,6 +6,7 @@ import { Fights } from '../../shared/models/fights.model';
   providedIn: 'root',
 })
 export class FightersService {
+
   fighters: Fighter[] = [
     {
       id: '1',
@@ -114,7 +115,7 @@ export class FightersService {
       name: 'Nacho Campos',
       imageUrl: '/assets/fighters/nacho/nacho.jpg',
       record: '6-1-0',
-      wins: 5,
+      wins: 6,
       Tko: 3,
       sub: 2,
       loses: 1,

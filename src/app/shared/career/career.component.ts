@@ -3,6 +3,12 @@ import { FightersService } from '../../core/services/fighters.service';
 import { ActivatedRoute } from '@angular/router';
 import { Fights } from '../models/fights.model';
 
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+
+gsap.registerPlugin(DrawSVGPlugin, MotionPathPlugin);
+
+
 import{ gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Fighter } from '../models/fighter.model';
@@ -17,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './career.component.scss',
 })
 export class CareerComponent implements OnInit, AfterViewInit {
-  careerLine!: ElementRef<SVGLineElement>;
+
   career: Fights[] = [];
   fighter: Fighter | undefined;
 
@@ -25,11 +31,12 @@ export class CareerComponent implements OnInit, AfterViewInit {
   offset = 600;
 
 
+
+
   constructor(
     private fightersService: FightersService,
     private route: ActivatedRoute
   ) {}
-
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -39,13 +46,15 @@ export class CareerComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
 
+
+  ngAfterViewInit(): void {
     const line = document.getElementById(
       'timeline'
     ) as unknown as SVGLineElement;
     const length = line.getTotalLength();
     const infos = gsap.utils.toArray('.container-career') as Element[];
+
 
 
     gsap.set(line, {
@@ -70,19 +79,19 @@ export class CareerComponent implements OnInit, AfterViewInit {
         onEnter: () =>
           gsap.to(infoEl as Element, {
             opacity: 1,
-            y: 100,
-            x: 0,
+            x: 5,
             duration: 0.6,
-            ease: 'power1.out',
+            ease: 'power2.out',
           }),
         onLeaveBack: () =>
           gsap.to(infoEl as Element, {
             opacity: 0,
-            x: 50,
+            x: -150,
             duration: 0.4,
             ease: 'power2.in',
           }),
       });
     });
+
   }
 }
