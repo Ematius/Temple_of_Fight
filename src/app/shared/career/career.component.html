@@ -1,11 +1,18 @@
-<section>
+<section id="career-top">
 
-  <div class="fighters-list">
+
+  <div class="fighters-list"  >
     <ul>
       <li>
         <div class="container-img">
+
           <img [src]="fighter?.imageUrl" [alt]="fighter?.name" class="fighter-image" />
-          <a [attr.href]="fighter?.tapology">Tapology</a>
+
+          <a [attr.href]="fighter?.tapology"> Oficial Tapology</a>
+           <img src="assets/icon/flecha-hacia-arriba.webp" alt="">
+          <p>TBP Tapology</p>
+          <img src="assets/icon/flecha-hacia-abajo.webp" class="tbp-tapology">
+
         </div>
         <div class="container-info">
         <h4> {{fighter?.name}} </h4>
@@ -19,11 +26,14 @@
         <p> <b>Altura:</b>  {{fighter?.height}}</p>
        </div>
       </li>
+
     </ul>
+
   </div>
 
+
   <div class="container-svg">
-    <svg width="1200" [attr.height]="career.length * spacing + offset">
+    <svg width="1200" [attr.height]="career.length * spacing + offset" >
       <line id="timeline" x1="15" y1="0" x2="15" [attr.y2]="career.length * spacing" />
       @for (fight of career; track $index) {
       <g class="container-group">
@@ -33,9 +43,9 @@
             <p> <b>Fecha del evento: </b> <br> <i>{{ fight.date }}</i> </p>
             <p> <b> Oponente: </b> <br> <i>{{ fight.opponent }}</i> </p>
             <p> <b>Resultado:</b>  <i> {{ fight.result }}</i> </p>
-            <p> <b> Evento</b>
+            <p> <b> Evento: </b>
               @if(fight.logoEvent){
-              <img  [src]=" fight.logoEvent" [alt]="fight.event + ' logo'">
+              <img  [src]=" fight.logoEvent" [alt]="fight.event + ' logo'" class="logo-event" />
               } @else {
                 <i>: {{ fight.event }}</i>
               }

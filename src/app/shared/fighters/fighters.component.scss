@@ -1,5 +1,5 @@
 section {
-  margin-bottom: var(--margin-l);
+  margin-bottom: 10rem;
   margin-top: 10rem;
   .fighters {
     display: flex;
@@ -7,6 +7,7 @@ section {
     align-items: center;
     justify-content: center;
     gap: 5rem;
+
     h3 {
       background: linear-gradient(
         var(--color-quaternary),
@@ -21,6 +22,118 @@ section {
       letter-spacing: var(--space-s);
     }
 
+    .switch {
+      position: relative;
+      width: var(--width-s);
+      height: var(--height-xs);
+      box-sizing: border-box;
+      padding: 3px;
+      background: black;
+      border-radius: 6px;
+      box-shadow: inset 0 1px 1px 1px rgba(0, 0, 0, 0.5),
+        0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+      input[type="checkbox"] {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+
+        + label {
+          position: relative;
+          display: block;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          background: #1b1c1c;
+          border-radius: 3px;
+          box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+          transition: all 0.8s ease-in-out;
+
+          &:before {
+            content: "Ama";
+            font-size: var(--font-size-s);
+            width: 50%;
+            background: linear-gradient(
+              var(--color-primary),
+              var(--color-secondary),
+              var(--color-tertiary)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: var(--font-primary);
+            margin-left: 10px;
+          }
+
+          &:after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+          }
+
+          i {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 75%;
+            width: 3px;
+            height: 24px;
+            margin-top: -12px;
+            margin-left: -1.5px;
+            border-radius: 2px;
+            background: #0d0d0d;
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3);
+
+            &:before,
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 2px;
+              background: #0d0d0d;
+              box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3);
+
+            }
+
+            &:before {
+              left: -7px;
+            }
+
+            &:after {
+              left: 7px;
+            }
+          }
+        }
+
+        &:checked {
+          + label {
+            left: 50%;
+
+            &:before {
+              content: "Pro";
+              font-size: var(--font-size-s);
+              background: linear-gradient(
+                var(--color-quaternary),
+                var(--color-quinary),
+                var(--color-sextary)
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              font-family: var(--font-primary);
+            }
+          }
+        }
+      }
+    }
+
     .fighters-list {
       ul {
         display: flex;
@@ -33,7 +146,7 @@ section {
           font-size: var(--font-size-xs);
           display: flex;
           flex-direction: column;
-          align-items: start;
+          align-items: center;
           width: var(--width-s);
           height: auto;
           gap: 1rem;
@@ -48,7 +161,7 @@ section {
           h4 {
             font-size: var(--font-size-s);
           }
-          img {
+          .fighter-image{
             width: var(--width-s);
             height: var(--height-s);
             object-fit: contain;
@@ -108,21 +221,22 @@ section {
       }
     }
   }
-  @media (min-width:700px) {
-    .fighters{
+  @media (min-width: 700px) {
+    .fighters {
       .fighters-list {
         ul {
-          gap:2rem;
-          li {
-            align-items: center;
-
-
+          gap: 2rem;
+          li{
+            .fighter-image{
+              width: var(--width-m);
+              height: var(--height-m);
+            }
           }
         }
       }
     }
   }
-  @media (min-width:1200px) {
+  @media (min-width: 1200px) {
     .fighters {
       .fighters-list {
         ul {
@@ -131,11 +245,11 @@ section {
             width: var(--width-m);
             height: var(--height-xxl);
             font-size: var(--font-size-s);
-            img {
-              width: var(--width-m);
-              height: var(--height-m);
+            .fighter-image {
+              width: var(--width-l);
+              height: var(--height-l);
             }
-            a{
+            a {
               width: var(--width-s);
               font-size: var(--font-size-s);
             }
@@ -145,5 +259,3 @@ section {
     }
   }
 }
-
-

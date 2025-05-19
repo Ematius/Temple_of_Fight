@@ -12,7 +12,7 @@
   --color-quinary: #aa9367;
   --color-sextary: #a28c61;
   --color-white:#fff5eeed;
-  --color-black: #000000;
+  --color-black: #0d0d0d;
 
   /* === Gradient colors === */
   --gradient-primary-rgb: 166, 132, 49;
@@ -59,6 +59,7 @@
   --padding-xl: clamp(3rem, 2vw + 2rem, 4rem);
 
   /* === width and heights === */
+
 
   --width-xxs: clamp(50px, 10vw, 100px);
   --width-xs: clamp(100px, 20vw, 200px);

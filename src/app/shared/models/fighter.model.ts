@@ -12,7 +12,8 @@ export interface Fighter {
   sub: number;
   loses: number;
   draw: number;
-  discipline: string;
+  profesional: boolean;
+  fightsAmateur: string;
   tapology: string;
   titles: string[];
   career: Fights[];

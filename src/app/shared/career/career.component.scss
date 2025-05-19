@@ -2,11 +2,8 @@ section {
   display: flex;
   flex-direction: column;
   letter-spacing: var(--space-s);
-  margin-bottom: 10rem;
-  width: 100vw;
-
-
-
+  margin-bottom: 50rem;
+  height: auto;
 
   .fighters-list {
     display: flex;
@@ -32,11 +29,11 @@ section {
           align-items: center;
 
           .fighter-image {
-            margin-top: 5rem;
+            margin-top: 10rem;
             width: var(--width-s);
-            height: auto;
+            height: var(--width-m);
             object-fit: contain;
-            border-radius: 20px;
+            border-radius: 50px;
           }
 
           a {
@@ -52,6 +49,34 @@ section {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             padding: 0.5rem;
+          }
+          p {
+            text-decoration: none;
+            font-size: var(--font-size-ms);
+            font-family: var(--font-primary);
+            background: linear-gradient(
+              var(--color-quaternary),
+              var(--color-quinary),
+              var(--color-sextary)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.5rem;
+          }
+          .tbp-tapology{
+            animation: boing 1.5s infinite;
+            @keyframes boing {
+              0% {
+                transform: scale(1);
+              }
+              50% {
+                transform: scale(1.3);
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
           }
         }
 
@@ -82,11 +107,15 @@ section {
   .container-svg {
     background: var(--color-background);
     display: flex;
+    justify-content: center;
+    width: 100%;
 
     svg {
+      width: 100%;
       border-radius: 10px;
       padding: 2rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      display: block;
 
       #timeline {
         stroke: var(--color-primary);
@@ -103,9 +132,10 @@ section {
 
         .container-career {
           width: var(--width-m);
-          height: var(--height-l);
+          height: var(--height-xl);
           opacity: 0;
           transition: opacity 0.8s ease;
+
           .career-info {
             background: linear-gradient(
               var(--color-primary),
@@ -120,14 +150,22 @@ section {
 
             p {
               margin: 0.3rem 0;
+              .logo-event {
+                display: inline-block;
+                vertical-align: middle;
+                width: var(--width-xxs);
+
+                border-radius: 5px;
+              }
             }
           }
         }
       }
     }
   }
-  @media (min-width: 1200px) {
 
+
+  @media (min-width: 1200px) {
     margin-bottom: 50rem;
     .fighters-list {
       ul {
@@ -137,11 +175,11 @@ section {
               width: var(--width-m);
             }
           }
-          .container-info{
+          .container-info {
             h4 {
               font-size: var(--font-size-l);
             }
-            p{
+            p {
               font-size: var(--font-size-s);
             }
           }
@@ -156,14 +194,11 @@ section {
             height: var(--height-m);
           }
           .container-career {
-
             width: var(--width-l);
             height: var(--height-l);
-
           }
         }
       }
     }
   }
-
 }

@@ -1,9 +1,19 @@
 <section aria-labelledby="wrapper-fighters">
   <article class="fighters">
     <h3>Peladores</h3>
+
+    <div class="switch">
+      <input id="toggle" type="checkbox" (change)="toggleProfesional()" [checked]="profesional" />
+      <label class="toggle" >
+        <i></i>
+      </label>
+    </div>
+
+
+
     <div class="fighters-list">
       <ul>
-        @for(fighter of fighters; track fighter.id){
+        @for(fighter of filteredFighters; track fighter.id){
         <li>
           <h4> {{fighter.name}} </h4>
           <img [src]="fighter.imageUrl" [alt]="fighter.name" class="fighter-image" />
@@ -11,7 +21,7 @@
           <p> <b>Victorias:</b> {{fighter?.wins}}</p>
           <p> <b>Derrotas:</b> {{fighter?.loses}}</p>
           <p> <b>Empate:</b> {{fighter?.draw}}</p>
-          <a [routerLink]="['/career', fighter.id]" class="btn-fighter" role="button">
+          <a [routerLink]="['/career', fighter.id]" fragment="career" class="btn-fighter" role="button">
             Ver recorrido de combates
           </a>
         </li>

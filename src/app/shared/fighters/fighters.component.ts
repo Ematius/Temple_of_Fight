@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { Fighter } from '../models/fighter.model';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Router } from '@angular/router';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,10 +14,21 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './fighters.component.html',
   styleUrl: './fighters.component.scss',
 })
-export class FightersComponent  implements AfterViewInit {
+export class FightersComponent {
+  profesional = true;
   @Input() fighters: Fighter[] = [];
 
-  ngAfterViewInit(): void {
-    
+  constructor(private router: Router) {}
+
+  
+
+  toggleProfesional() {
+    this.profesional = !this.profesional;
+  }
+
+  get filteredFighters() {
+    return this.fighters.filter(
+      (fighter) => fighter.profesional === this.profesional
+    );
   }
 }

@@ -1,227 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Fighter } from '../../shared/models/fighter.model';
 import { Fights } from '../../shared/models/fights.model';
+import { Discipline } from '../../shared/models/discipline.model';
+import { discipline } from '../data/discipline.data';
+
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class FightersService {
 
-  fighters: Fighter[] = [
-    {
-      id: '1',
-      name: 'boxeo Tanaka',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '12-1-0',
-      wins: 12,
-      Tko: 9,
-      sub: 0,
-      loses: 1,
-      draw: 0,
-      discipline: 'boxeo',
-      tapology: '',
-      titles: [],
-      height: '175 cm',
-      weight: '68 kg',
-      career: [],
-    },
-    {
-      id: '2',
-      name: 'Lucía Fernández',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '10-2-1',
-      wins: 10,
-      Tko: 6,
-      sub: 0,
-      loses: 2,
-      draw: 1,
-      discipline: 'boxeo',
-      tapology: '',
-      titles: [],
-      height: '168 cm',
-      weight: '61 kg',
-      career: [],
-    },
-    {
-      id: '3',
-      name: 'Juan Pérez',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '8-3-2',
-      wins: 8,
-      Tko: 5,
-      sub: 0,
-      loses: 3,
-      draw: 2,
-      discipline: 'boxeo',
-      tapology: '',
-      titles: [],
-      height: '180 cm',
-      weight: '70 kg',
-      career: [],
-    },
-    {
-      id: '12',
-      name: 'muaythai Tanaka',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '12-1-0',
-      wins: 12,
-      Tko: 9,
-      sub: 0,
-      loses: 1,
-      draw: 0,
-      discipline: 'muaythai',
-      tapology: '',
-      titles: [],
-      height: '175 cm',
-      weight: '68 kg',
-      career: [],
-    },
-    {
-      id: '22',
-      name: 'Lucía Fernández',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '10-2-1',
-      wins: 10,
-      Tko: 6,
-      sub: 0,
-      loses: 2,
-      draw: 1,
-      discipline: 'muaythai',
-      tapology: '',
-      titles: [],
-      height: '168 cm',
-      weight: '61 kg',
-      career: [],
-    },
-    {
-      id: '32',
-      name: 'Juan Pérez',
-      imageUrl: '/assets/fighters/Nacho.jpg',
-      record: '8-3-2',
-      wins: 8,
-      Tko: 5,
-      sub: 0,
-      loses: 3,
-      draw: 2,
-      discipline: 'muaythai',
-      tapology: '',
-      titles: [],
-      height: '180 cm',
-      weight: '70 kg',
-      career: [],
-    },
-    {
-      id: '13',
-      name: 'Nacho Campos',
-      imageUrl: '/assets/fighters/nacho/nacho.jpg',
-      record: '6-1-0',
-      wins: 6,
-      Tko: 3,
-      sub: 2,
-      loses: 1,
-      draw: 0,
-      discipline: 'mma',
-      tapology:
-        'https://www.tapology.com/fightcenter/fighters/372603-nacho-campos',
-      titles: [],
-      height: '178 cm',
-      weight: '66 kg',
-      career: [
-        {
-          opponent: 'Henry Escalona',
-          result: 'Win',
-          event: 'WOW',
-          date: '2025-04-12',
-          logoEvent: 'assets/img/fight-events/WOW.png',
-        },
-        {
-          opponent: 'Ibragim Ibragimov',
-          result: 'Loss',
-          event: 'PFL',
-          date: '2024-10-19',
-          logoEvent: 'assets/img/fight-events/PFL.png',
-        },
-        {
-          opponent: 'Israel Nascimento',
-          result: 'Win',
-          event: 'LBE',
-          date: '2024-06-08',
-          logoEvent: 'assets/img/fight-events/LBE.png',
-        },
-        {
-          opponent: 'Stephane Sebisaholubambo',
-          result: 'Win',
-          event: 'Extreme Fighters',
-          date: '2024-03-02',
-          logoEvent: 'assets/img/fight-events/XtremeFighters.png',
-        },
-        {
-          opponent: 'Hector Huamani',
-          result: 'Win',
-          event: 'AFL',
-          date: '2023-10-07',
-          logoEvent: 'assets/img/fight-events/AFL.png',
-        },
-        {
-          opponent: 'Bobby Ekata',
-          result: 'Win',
-          event: 'AFL',
-          date: '2023-06-17',
-          logoEvent: 'assets/img/fight-events/AFL.png',
-        },
-        {
-          opponent: 'Santhiago Paiva',
-          result: 'Win',
-          event: 'WOW',
-          date: '2023-03-04',
-          logoEvent: 'assets/img/fight-events/WOW.png',
-        },
-      ],
-    },
-    {
-      id: '23',
-      name: 'Lucía Fernández',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '10-2-1',
-      wins: 10,
-      Tko: 6,
-      sub: 1,
-      loses: 2,
-      draw: 1,
-      discipline: 'mma',
-      tapology: '',
-      titles: [],
-      height: '168 cm',
-      weight: '61 kg',
-      career: [],
-    },
-    {
-      id: '33',
-      name: 'Juan Pérez',
-      imageUrl: '/assets/fighters/akira.jpg',
-      record: '8-3-2',
-      wins: 8,
-      Tko: 5,
-      sub: 0,
-      loses: 3,
-      draw: 2,
-      discipline: 'mma',
-      tapology: '',
-      titles: [],
-      height: '180 cm',
-      weight: '70 kg',
-      career: [],
-    },
-  ];
+  private discipline: Discipline = discipline;
 
-  getFightersByDiscipline(discipline: string): Fighter[] {
-    return this.fighters.filter((fighter) => fighter.discipline === discipline);
-  }
-  getFighterCareerById(id: string): Fights[] {
-    const fighter = this.fighters.find((fighter) => fighter.id === id);
-    return fighter ? fighter.career : [];
+  getFightersByDiscipline(discipline: keyof Discipline): Fighter[] {
+    return this.discipline[discipline];
   }
   getFighterById(id: string): Fighter | undefined {
-    return this.fighters.find((fighter) => fighter.id === id);
+    return Object.values(this.discipline)
+      .flat()
+      .find((fighter) => fighter.id === id);
+  }
+  getFighterCareerById(id: string): Fights[] {
+    const fighter = this.getFighterById(id);
+    return fighter ? fighter.career : [];
   }
 }

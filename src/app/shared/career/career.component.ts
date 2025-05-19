@@ -1,20 +1,14 @@
-import { Component, ElementRef, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FightersService } from '../../core/services/fighters.service';
 import { ActivatedRoute } from '@angular/router';
 import { Fights } from '../models/fights.model';
-
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
-import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-
-gsap.registerPlugin(DrawSVGPlugin, MotionPathPlugin);
-
-
+import { Fighter } from '../models/fighter.model';
 import{ gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Fighter } from '../models/fighter.model';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger);
-
+gsap.registerPlugin(ScrollToPlugin);
 
 @Component({
   selector: 'app-career',
@@ -29,9 +23,6 @@ export class CareerComponent implements OnInit, AfterViewInit {
 
   spacing = 600;
   offset = 600;
-
-
-
 
   constructor(
     private fightersService: FightersService,
@@ -91,6 +82,17 @@ export class CareerComponent implements OnInit, AfterViewInit {
             ease: 'power2.in',
           }),
       });
+    });
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment === 'career') {
+        setTimeout(() => {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: { y: '#career-top', offsetY: 0 },
+            ease: 'power2.inOut',
+          });
+        }, 0); // espera al siguiente ciclo de render
+      }
     });
 
   }

@@ -1,0 +1,122 @@
+import { Fighter } from '../../shared/models/fighter.model';
+
+
+export const disciplineMma: Fighter[] = [
+
+    {
+      id: 'nacho-campos',
+      name: 'Nacho Campos',
+      imageUrl: '/assets/fighters/nacho-campos.webp',
+      record: '6-1-0',
+      wins: 6,
+      Tko: 3,
+      sub: 2,
+      loses: 1,
+      draw: 0,
+      profesional: true,
+      fightsAmateur: '',
+      tapology:
+        'https://www.tapology.com/fightcenter/fighters/372603-nacho-campos',
+      titles: [],
+      height: '178 cm',
+      weight: '66 kg',
+      career: [
+        {
+          opponent: 'Henry Escalona',
+          result: 'Win',
+          event: 'WOW',
+          date: '2025-04-12',
+          logoEvent: 'assets/img/fight-events/WOW.webp',
+        },
+        {
+          opponent: 'Ibragim Ibragimov',
+          result: 'Loss',
+          event: 'PFL',
+          date: '2024-10-19',
+          logoEvent: 'assets/img/fight-events/PFL.webp',
+        },
+        {
+          opponent: 'Israel Nascimento',
+          result: 'Win',
+          event: 'LBE',
+          date: '2024-06-08',
+          logoEvent: 'assets/img/fight-events/LBE.webp',
+        },
+        {
+          opponent: 'Stephane Sebisaholubambo',
+          result: 'Win',
+          event: 'Extreme Fighters',
+          date: '2024-03-02',
+          logoEvent: 'assets/img/fight-events/XtremeFighters.webp',
+        },
+        {
+          opponent: 'Hector Huamani',
+          result: 'Win',
+          event: 'AFL',
+          date: '2023-10-07',
+          logoEvent: 'assets/img/fight-events/AFL.webp',
+        },
+        {
+          opponent: 'Bobby Ekata',
+          result: 'Win',
+          event: 'AFL',
+          date: '2023-06-17',
+          logoEvent: 'assets/img/fight-events/AFL.webp',
+        },
+        {
+          opponent: 'Santhiago Paiva',
+          result: 'Win',
+          event: 'WOW',
+          date: '2023-03-04',
+          logoEvent: 'assets/img/fight-events/WOW.webp',
+        },
+      ],
+    },
+    {
+      id: 'antonio-forfica',
+      name: 'Antonio Forfica',
+      imageUrl: '/assets/fighters/antonio-forfica.webp',
+      record: '1-0-0',
+      wins: 1,
+      Tko: 1,
+      sub: 0,
+      loses: 0,
+      draw: 0,
+      profesional: true,
+      fightsAmateur: '15-3-0',
+      tapology:
+        'https://www.tapology.com/fightcenter/fighters/319939-antonio-fofirca',
+      titles: [],
+      height: '182 cm',
+      weight: '72,5 kg',
+      career: [
+        {
+          opponent: 'Jesus Basco',
+          result: 'Win',
+          event: 'WOW',
+          date: '2025-04-12',
+          logoEvent: 'assets/img/fight-events/WOW.webp',
+        },
+      ],
+    },
+    {
+      id: 'haciendo-peleadores',
+      name: 'Creando peladores',
+      imageUrl: '/assets/fighters/creando-peleador.webp',
+      record: '0-0-0',
+      wins: 0,
+      Tko: 0,
+      sub: 0,
+      loses: 0,
+      draw: 0,
+      profesional: false,
+      fightsAmateur: '',
+      tapology: '',
+      titles: [],
+      height: '',
+      weight: '',
+      career: [],
+    },
+  ]
+
+
