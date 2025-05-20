@@ -109,6 +109,7 @@ section {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: auto;
 
     svg {
       width: 100%;
@@ -143,8 +144,8 @@ section {
             );
             border: 2px solid var(--color-white);
             border-radius: 10px;
-            margin: var(--margin-m);
-            padding: var(--padding-m);
+            margin: var(--margin-s);
+            padding: var(--padding-s);
             color: var(--color-white);
             font-size: var(--font-size-s);
 
@@ -192,10 +193,6 @@ section {
           circle {
             width: var(--width-m);
             height: var(--height-m);
-          }
-          .container-career {
-            width: var(--width-l);
-            height: var(--height-l);
           }
         }
       }
