@@ -2,7 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { DisciplineService } from './discipline.service';
 
-describe('DisciplineService', () => {
+
+describe('Given disciplineService', () => {
   let service: DisciplineService;
 
   beforeEach(() => {
@@ -10,7 +11,14 @@ describe('DisciplineService', () => {
     service = TestBed.inject(DisciplineService);
   });
 
-  it('should be created', () => {
+  it('Then should be created', () => {
     expect(service).toBeTruthy();
   });
+  describe('When getTrainersByDiscipline is used', () => {
+    it('Then should return trainers matching the given disciple', () => {
+      const disciplineMma = 'mma';
+      const result = service.getTrainersByDiscipline(disciplineMma);
+      expect(result.every(trainer => trainer.discipline === disciplineMma)).toBe(true);
+    });
+  })
 });

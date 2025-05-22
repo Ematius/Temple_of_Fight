@@ -29,6 +29,7 @@ export class CareerComponent implements OnInit, AfterViewInit {
     private route: ActivatedRoute
   ) {}
 
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
@@ -94,6 +95,6 @@ export class CareerComponent implements OnInit, AfterViewInit {
         }, 0); // espera al siguiente ciclo de render
       }
     });
-
   }
+  
 }

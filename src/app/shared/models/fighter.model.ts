@@ -6,6 +6,7 @@ export interface Fighter {
   imageUrl: string;
   height: string;
   weight: string;
+  birthdate: string;
   record: string;
   wins: number;
   Tko: number;
